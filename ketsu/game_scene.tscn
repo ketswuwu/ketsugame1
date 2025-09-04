@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://43q55xbt378f"]
+
+[ext_resource type="PackedScene" uid="uid://bq2k8gyr10mi8" path="res://scenes/player.tscn" id="1_mlf6e"]
+[ext_resource type="Texture2D" uid="uid://dsktph6nywcug" path="res://tiles/basetile.png" id="1_po0ka"]
+
+[node name="game_scene" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -602.0
+offset_top = -488.0
+offset_right = 584.0
+offset_bottom = 375.0
+texture = ExtResource("1_po0ka")
+expand_mode = 1
+
+[node name="player" parent="." instance=ExtResource("1_mlf6e")]
+motion_mode = 1
+move_speed = 400.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+rotation = 3.14159
+scale = Vector2(10.7021, nan)
+skew = nan
+offset = Vector2(0, 1)
