@@ -1,10 +1,10 @@
 extends CharacterBody2D
 
+
 @export var move_speed : float = 500
 var character_direction : Vector2
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $sprite
-
 var animation_direction: String = "down"
 var animation_state: String = ""
 var attack_state: String = ""

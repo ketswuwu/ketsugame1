@@ -12,8 +12,12 @@ config_version=5
 
 config/name="Ketsu"
 run/main_scene="uid://43q55xbt378f"
-config/features=PackedStringArray("4.4", "Forward Plus")
+config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Events="*res://scenes/events.gd"
 
 [input]
 

@@ -1,17 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://43q55xbt378f"]
+[gd_scene load_steps=4 format=3 uid="uid://43q55xbt378f"]
 
 [ext_resource type="PackedScene" uid="uid://bq2k8gyr10mi8" path="res://scenes/player.tscn" id="1_mlf6e"]
-[ext_resource type="Texture2D" uid="uid://dsktph6nywcug" path="res://tiles/basetile.png" id="1_po0ka"]
+[ext_resource type="PackedScene" uid="uid://c3mbxdiax41nw" path="res://scenes/room_1.tscn" id="1_po0ka"]
+[ext_resource type="Script" uid="uid://byyq7k3sfmiw3" path="res://camera_2d.gd" id="3_v1wow"]
 
 [node name="game_scene" type="Node2D"]
 
-[node name="TextureRect" type="TextureRect" parent="."]
-offset_left = -602.0
-offset_top = -488.0
-offset_right = 584.0
-offset_bottom = 375.0
-texture = ExtResource("1_po0ka")
-expand_mode = 1
+[node name="room1" parent="." instance=ExtResource("1_po0ka")]
+position = Vector2(0, 1)
+
+[node name="room2" parent="." instance=ExtResource("1_po0ka")]
+position = Vector2(23, -936)
+rotation = -3.1415927
 
 [node name="player" parent="." instance=ExtResource("1_mlf6e")]
 motion_mode = 1
@@ -22,3 +22,7 @@ rotation = 3.14159
 scale = Vector2(10.7021, nan)
 skew = nan
 offset = Vector2(0, 1)
+zoom = Vector2(0.7, 0.7)
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+script = ExtResource("3_v1wow")
