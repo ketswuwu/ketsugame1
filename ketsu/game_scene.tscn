@@ -1,28 +1,178 @@
-[gd_scene load_steps=4 format=3 uid="uid://43q55xbt378f"]
+[gd_scene load_steps=24 format=3 uid="uid://43q55xbt378f"]
 
+[ext_resource type="Texture2D" uid="uid://bctb5n3b4xkig" path="res://tiles/map/fil,er.png" id="1_jv0we"]
 [ext_resource type="PackedScene" uid="uid://bq2k8gyr10mi8" path="res://scenes/player.tscn" id="1_mlf6e"]
+[ext_resource type="PackedScene" uid="uid://do6colkambt84" path="res://scenes/hallway2.tscn" id="1_opqoc"]
 [ext_resource type="PackedScene" uid="uid://c3mbxdiax41nw" path="res://scenes/room_1.tscn" id="1_po0ka"]
+[ext_resource type="PackedScene" uid="uid://bbvjla7ka43os" path="res://scenes/room2.tscn" id="2_6e45b"]
+[ext_resource type="PackedScene" uid="uid://bju8bfk4e1svn" path="res://scenes/breakableroom.tscn" id="2_bpcsf"]
+[ext_resource type="PackedScene" uid="uid://imhh8yne0cdo" path="res://scenes/easypath1.tscn" id="3_e35lh"]
 [ext_resource type="Script" uid="uid://byyq7k3sfmiw3" path="res://camera_2d.gd" id="3_v1wow"]
+[ext_resource type="PackedScene" uid="uid://dt5mhlrqp6tsd" path="res://scenes/actionable.tscn" id="4_kdryc"]
+[ext_resource type="PackedScene" uid="uid://dn3m6nwabfjy0" path="res://scenes/hallway1.tscn" id="4_udeyl"]
+[ext_resource type="Resource" uid="uid://dttikqahansw" path="res://dialogue/talking.dialogue" id="5_6e45b"]
+[ext_resource type="PackedScene" uid="uid://pah03r3ih2cc" path="res://scenes/treasureroom.tscn" id="5_miq82"]
+[ext_resource type="PackedScene" uid="uid://wj6a6h0daphb" path="res://scenes/leaduproom.tscn" id="6_j5hk1"]
+[ext_resource type="PackedScene" uid="uid://dfb17dgv3ey2c" path="res://scenes/shoproom.tscn" id="6_ueiaa"]
+[ext_resource type="PackedScene" uid="uid://cwghqfhvgvvh3" path="res://scenes/playermenu.tscn" id="7_6e45b"]
+[ext_resource type="PackedScene" uid="uid://bdgiqnke4tw8l" path="res://scenes/bossroom.tscn" id="8_daj04"]
+[ext_resource type="PackedScene" uid="uid://dg3n5h4wi3voa" path="res://scenes/pillarroom.tscn" id="10_bpcsf"]
+[ext_resource type="PackedScene" uid="uid://t321k8pe0ghc" path="res://scenes/bottomleft.tscn" id="12_3d2pr"]
+[ext_resource type="PackedScene" uid="uid://cc5ck1cfee0uy" path="res://scenes/secretroom2.tscn" id="13_h5hfs"]
+[ext_resource type="PackedScene" uid="uid://c6rc0kvn6d4dg" path="res://scenes/transitionhall2.tscn" id="14_na8jj"]
+[ext_resource type="PackedScene" uid="uid://bmamodd5qvwsv" path="res://scenes/breakablewall.tscn" id="14_snaye"]
+[ext_resource type="PackedScene" uid="uid://wlxig4naodtp" path="res://scenes/transithall.tscn" id="16_nuflt"]
+[ext_resource type="PackedScene" uid="uid://dt25rk7gid8tt" path="res://scenes/enemy.tscn" id="20_1wc4g"]
 
 [node name="game_scene" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-2189.2502, -399.75)
+scale = Vector2(0.17116229, 0.16979165)
+texture = ExtResource("1_jv0we")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(1159, -305.5)
+scale = Vector2(0.56016606, 0.49375004)
+texture = ExtResource("1_jv0we")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(-1413, 784.5)
+scale = Vector2(0.54771787, 0.5479166)
+texture = ExtResource("1_jv0we")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+position = Vector2(-493.75, 737.75)
+scale = Vector2(0.6255186, 0.5135416)
+texture = ExtResource("1_jv0we")
+
+[node name="Sprite2D5" type="Sprite2D" parent="."]
+position = Vector2(969.62506, 807.50006)
+scale = Vector2(0.84076804, 0.35208333)
+texture = ExtResource("1_jv0we")
+
+[node name="Sprite2D6" type="Sprite2D" parent="."]
+position = Vector2(584.5, -662)
+scale = Vector2(0.32987544, 0.41666666)
+texture = ExtResource("1_jv0we")
+
+[node name="Sprite2D7" type="Sprite2D" parent="."]
+position = Vector2(-1862.5, -1072)
+scale = Vector2(0.5580915, 0.4958333)
+texture = ExtResource("1_jv0we")
+
+[node name="Sprite2D8" type="Sprite2D" parent="."]
+position = Vector2(-1978, -1657)
+scale = Vector2(0.5518672, 0.6041668)
+texture = ExtResource("1_jv0we")
+
+[node name="Sprite2D9" type="Sprite2D" parent="."]
+position = Vector2(-1803.5, -1930.5)
+scale = Vector2(1.2759336, 0.49375033)
+texture = ExtResource("1_jv0we")
+
+[node name="Sprite2D10" type="Sprite2D" parent="."]
+position = Vector2(-877, -1930.5)
+scale = Vector2(0.7551868, 0.49375033)
+texture = ExtResource("1_jv0we")
+
+[node name="Sprite2D11" type="Sprite2D" parent="."]
+position = Vector2(-2707, 146)
+scale = Vector2(0.62655574, 0.5083334)
+texture = ExtResource("1_jv0we")
+
+[node name="hallway2" parent="." instance=ExtResource("1_opqoc")]
+position = Vector2(205, 775)
+scale = Vector2(0.54, 0.54)
+
+[node name="breakableroom" parent="." instance=ExtResource("2_bpcsf")]
+position = Vector2(-1707.0001, 749)
+scale = Vector2(0.54, 0.54)
 
 [node name="room1" parent="." instance=ExtResource("1_po0ka")]
 position = Vector2(0, 1)
 
-[node name="room2" parent="." instance=ExtResource("1_po0ka")]
-position = Vector2(23, -936)
-rotation = -3.1415927
+[node name="room2" parent="." instance=ExtResource("2_6e45b")]
+position = Vector2(-470, -1129)
+scale = Vector2(0.544, 0.544)
+
+[node name="room3" parent="." instance=ExtResource("3_e35lh")]
+position = Vector2(1136, -721)
+scale = Vector2(0.54, 0.54)
+
+[node name="treasureroom" parent="." instance=ExtResource("5_miq82")]
+position = Vector2(-1347.0001, -1368)
+scale = Vector2(0.54, 0.54)
+
+[node name="hallway1" parent="." instance=ExtResource("4_udeyl")]
+position = Vector2(-1180.0001, -1093)
+scale = Vector2(0.54, 0.54)
+
+[node name="Node2D4" parent="." instance=ExtResource("16_nuflt")]
+position = Vector2(-1264, -1995.0001)
+scale = Vector2(0.54, 0.54)
+
+[node name="shoproom" parent="." instance=ExtResource("6_ueiaa")]
+position = Vector2(-1973, -1967.0001)
+scale = Vector2(0.54, 0.54)
+
+[node name="leaduproom" parent="." instance=ExtResource("6_j5hk1")]
+position = Vector2(-2068, -1046)
+scale = Vector2(0.54, 0.54)
+
+[node name="bossroom" parent="." instance=ExtResource("8_daj04")]
+position = Vector2(-146.00002, -1995.0001)
+scale = Vector2(0.54, 0.54)
+
+[node name="pillarroom" parent="." instance=ExtResource("10_bpcsf")]
+position = Vector2(1131, 318)
+scale = Vector2(0.54, 0.54)
+
+[node name="node2d" parent="." instance=ExtResource("13_h5hfs")]
+position = Vector2(-2711.0002, -466)
+scale = Vector2(0.54, 0.54)
+
+[node name="Node2D2" parent="." instance=ExtResource("14_na8jj")]
+position = Vector2(-2167.9998, -99.99999)
+scale = Vector2(0.36, 0.36)
+
+[node name="Node2D" parent="." instance=ExtResource("16_nuflt")]
+position = Vector2(-895, 757)
+scale = Vector2(0.6, 0.6)
+
+[node name="bottomleft" parent="." instance=ExtResource("12_3d2pr")]
+position = Vector2(-2456, 582.00006)
+scale = Vector2(0.54, 0.54)
+
+[node name="breakablewall" parent="." instance=ExtResource("14_snaye")]
+position = Vector2(-2714, 119)
+scale = Vector2(0.54, 0.54)
 
 [node name="player" parent="." instance=ExtResource("1_mlf6e")]
+position = Vector2(20, 353)
 motion_mode = 1
 move_speed = 400.0
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="player"]
+position = Vector2(-3, -42)
 rotation = 3.14159
-scale = Vector2(10.7021, nan)
+scale = Vector2(0.45, nan)
 skew = nan
 offset = Vector2(0, 1)
 zoom = Vector2(0.7, 0.7)
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 script = ExtResource("3_v1wow")
+
+[node name="Actionable" parent="." instance=ExtResource("4_kdryc")]
+position = Vector2(-831, 126)
+dialogue_resource = ExtResource("5_6e45b")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Actionable"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable/CollisionShape2D2"]
+
+[node name="Playermenu" parent="." instance=ExtResource("7_6e45b")]
+
+[node name="enemy" parent="." instance=ExtResource("20_1wc4g")]
+position = Vector2(-342, -46)
