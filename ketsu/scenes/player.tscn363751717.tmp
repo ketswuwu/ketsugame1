@@ -115,6 +115,27 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("5_ur7pv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ur7pv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ur7pv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ur7pv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ur7pv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ur7pv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ur7pv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ur7pv")
 }],
 "loop": true,
 "name": &"dead_up",
@@ -297,7 +318,6 @@ size = Vector2(45.5, 83)
 
 [node name="player" type="CharacterBody2D" groups=["player"]]
 collision_layer = 2
-collision_mask = 37
 script = ExtResource("1_g2els")
 
 [node name="sprite" type="AnimatedSprite2D" parent="."]
@@ -305,7 +325,7 @@ unique_name_in_owner = true
 position = Vector2(1, -51)
 scale = Vector2(0.296661, 0.30624)
 sprite_frames = SubResource("SpriteFrames_smehm")
-animation = &"dash_side"
+animation = &"attack_side_3"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../sprite")
@@ -322,7 +342,6 @@ shape = SubResource("CapsuleShape2D_g2els")
 one_shot = true
 
 [node name="AttackComboTimer" type="Timer" parent="."]
-one_shot = true
 
 [node name="AttackLungeTimer" type="Timer" parent="."]
 one_shot = true
@@ -331,20 +350,19 @@ one_shot = true
 one_shot = true
 
 [node name="DeathTimer" type="Timer" parent="."]
-one_shot = true
 
 [node name="DashTimer" type="Timer" parent="."]
-one_shot = true
 
 [node name="DashCooldownTimer" type="Timer" parent="."]
-one_shot = true
 
-[node name="AttackHitbox" type="Area2D" parent="." groups=["player_attack"]]
+[node name="AttackHitbox" type="Area2D" parent="."]
 collision_layer = 2
+monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackHitbox"]
 position = Vector2(0, -42)
 shape = SubResource("RectangleShape2D_smehm")
+disabled = true
 
 [node name="Direction" type="Marker2D" parent="."]
 
@@ -363,5 +381,4 @@ shape = SubResource("RectangleShape2D_ur7pv")
 [connection signal="timeout" from="DeathTimer" to="." method="_on_death_timer_timeout"]
 [connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="DashCooldownTimer" to="." method="_on_dash_cooldown_timer_timeout"]
-[connection signal="area_entered" from="AttackHitbox" to="." method="_on_attack_hitbox_area_entered"]
 [connection signal="body_entered" from="AttackHitbox" to="." method="_on_attack_hitbox_body_entered"]

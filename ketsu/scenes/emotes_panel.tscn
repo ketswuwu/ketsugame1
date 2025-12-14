@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://nqajnssx0k0n"]
+
+[ext_resource type="Script" uid="uid://col1s5x0tivkk" path="res://emotes_panel.gd" id="1_jt0eh"]
+[ext_resource type="Texture2D" uid="uid://bv1id4kmoton" path="res://sprites/talksprite/ketsutest.png" id="2_h8ggh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gfgw2"]
+atlas = ExtResource("2_h8ggh")
+region = Rect2(0, 0, 670, 877)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vmshr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gfgw2")
+}],
+"loop": true,
+"name": &"talk",
+"speed": 5.0
+}]
+
+[node name="EmotesPanel" type="Panel"]
+size_flags_vertical = 8
+script = ExtResource("1_jt0eh")
+
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Control"]
+position = Vector2(138.25, 304.7746)
+scale = Vector2(0.35746273, 0.36500266)
+sprite_frames = SubResource("SpriteFrames_vmshr")
+animation = &"talk"

@@ -1,0 +1,75 @@
+[gd_scene load_steps=11 format=3 uid="uid://bdgiqnke4tw8l"]
+
+[ext_resource type="Texture2D" uid="uid://5pqrak6yx4so" path="res://tiles/map/bossroom.png" id="1_p0u1f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p0u1f"]
+size = Vector2(2579, 139)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jqod1"]
+size = Vector2(95, 740)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_blb1r"]
+size = Vector2(95, 794)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3m531"]
+size = Vector2(2575.5, 29)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ipatn"]
+size = Vector2(107, 1960)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m4rt6"]
+size = Vector2(319, 501)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a08i8"]
+size = Vector2(311, 505)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aaoqh"]
+size = Vector2(319, 498)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a4e2p"]
+size = Vector2(315, 505)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_p0u1f")
+
+[node name="walls" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="walls"]
+position = Vector2(11.5, -903.5)
+shape = SubResource("RectangleShape2D_p0u1f")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="walls"]
+position = Vector2(-1234.5, -519)
+shape = SubResource("RectangleShape2D_jqod1")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="walls"]
+position = Vector2(-1234.5, 601)
+shape = SubResource("RectangleShape2D_blb1r")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="walls"]
+position = Vector2(5.25, 991.5)
+shape = SubResource("RectangleShape2D_3m531")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="walls"]
+position = Vector2(1247.5, 26)
+shape = SubResource("RectangleShape2D_ipatn")
+
+[node name="pillars" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pillars"]
+position = Vector2(-613.5, -460.5)
+shape = SubResource("RectangleShape2D_m4rt6")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="pillars"]
+position = Vector2(628.5, -469.5)
+shape = SubResource("RectangleShape2D_a08i8")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="pillars"]
+position = Vector2(-616.5, 544)
+shape = SubResource("RectangleShape2D_aaoqh")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="pillars"]
+position = Vector2(619.5, 536.5)
+shape = SubResource("RectangleShape2D_a4e2p")
